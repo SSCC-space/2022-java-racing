@@ -1,4 +1,4 @@
-package org.sscc.study;
+package org.sscc.study.resource;
 
 public class Car {
     private final GameCondition gameCondition;

@@ -1,4 +1,4 @@
-package org.sscc.study;
+package org.sscc.study.view;
 
 import java.util.Scanner;
 

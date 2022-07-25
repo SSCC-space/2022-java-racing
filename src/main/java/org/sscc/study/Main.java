@@ -1,5 +1,8 @@
 package org.sscc.study;
 
+import org.sscc.study.view.InputView;
+import org.sscc.study.view.ResultView;
+
 import java.util.Scanner;
 
 public class Main {

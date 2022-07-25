@@ -1,4 +1,4 @@
-package org.sscc.study;
+package org.sscc.study.resource;
 
 public class Round {
     private final Roster someExhaustClass;

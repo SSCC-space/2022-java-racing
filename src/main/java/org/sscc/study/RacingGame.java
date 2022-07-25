@@ -1,5 +1,8 @@
 package org.sscc.study;
 
+import org.sscc.study.resource.Roster;
+import org.sscc.study.resource.Round;
+
 import java.util.List;
 import java.util.Vector;
 

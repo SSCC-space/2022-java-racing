@@ -1,4 +1,4 @@
-package org.sscc.study;
+package org.sscc.study.resource;
 
 import java.util.List;
 import java.util.Vector;

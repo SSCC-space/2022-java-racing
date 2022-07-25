@@ -3,6 +3,8 @@ package org.sscc.study.resource;
 public class Round {
     private final Roster someExhaustClass;
 
+    private NumberGenerator randomNumber = new NumberGenerator();
+
     public Round(Roster roster) {
         this.someExhaustClass = roster;
     }
@@ -14,7 +16,7 @@ public class Round {
 
     private void executeRound() {
         for (Car car : someExhaustClass.roster()) {
-            car.moveForward();
+            car.move(randomNumber);
         }
     }
 }

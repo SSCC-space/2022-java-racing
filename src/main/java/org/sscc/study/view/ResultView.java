@@ -14,25 +14,12 @@ public class ResultView {
         this.gameResult = gameResult;
     }
 
-    public static void printFormat() {
-        System.out.println("\n실행결과");
-    }
-
-    public static void printRoundResult(Vector<String> roundResults) {
-        roundResults.forEach(System.out::println);
-        System.out.println();
-    }
-
     public void printResult() {
-        format();
+        System.out.println("\n실행결과");
         for (Roster status : gameResult) {
             printDashedRoster(status);
             System.out.println();
         }
-    }
-
-    private void format() {
-        System.out.println("\n실행결과");
     }
 
     private void printDashedRoster(Roster status) {
@@ -42,7 +29,8 @@ public class ResultView {
     }
 
     private void printDashedPosition(Car car) {
-        System.out.println(dashPosition(car));
+        String carPosition = dashPosition(car);
+        System.out.println(carPosition);
     }
 
     private String dashPosition(Car car) {

@@ -1,33 +1,29 @@
 package org.sscc.study.resource;
 
+import java.util.Random;
+
 public class Car {
-    private final GameCondition gameCondition;
     private int position;
 
-    public Car(Car car) {
-        this(new GameCondition(), car.currentPosition());
+    public Car(Car that) {
+        this.position = that.currentPosition();
     }
 
     public Car() {
-        this(new GameCondition());
+        this(0);
     }
 
-    public Car(GameCondition gameCondition) {
-        this(gameCondition, 0);
-    }
-
-    public Car(GameCondition gameCondition, int position) {
-        this.gameCondition = gameCondition;
+    public Car(int position) {
         this.position = position;
     }
 
-    public void moveForward() {
-        if (gameCondition.movable()) {
+    public void move(NumberGenerator someNumber) {
+        if (someNumber.isMovable()) {
             position++;
         }
     }
 
     public int currentPosition() {
-        return this.position;
+        return position;
     }
 }

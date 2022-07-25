@@ -1,3 +1,4 @@
+import calculator.Calculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,7 +10,7 @@ public class CalculatorTest {
 
     @BeforeEach
     public void init(){
-        calculator = new Calculator();
+        calculator = new Calculator("");
     }
 
     @DisplayName("add test")
@@ -40,7 +41,7 @@ public class CalculatorTest {
     @Test
     public void inputNotExist() {
         assertThatThrownBy(() -> {
-            calculator.toInt("");
+            Calculator calculatorNull = new Calculator();
         }).isInstanceOf(IllegalArgumentException.class);
     }
 

@@ -1,17 +1,17 @@
 package org.sscc.study.racing;
 
 public class Car {
-    private String name;
+    private int position;
 
-    public Car(String name) {
-        this.name = name;
+    public Car(int position) {
+        this.position = position;
     }
 
     public void move() {
-        name += "-";
+        position++;
     }
 
-    public String getName() {
-        return name;
+    public int getPosition() {
+        return position;
     }
 }

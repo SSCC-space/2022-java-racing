@@ -9,7 +9,7 @@ public class Cars {
     public Cars(int number) {
         cars = new ArrayList<>();
         for (int i = 0; i < number; i++) {
-            cars.add(new Car(""));
+            cars.add(new Car(0));
         }
     }
 
@@ -25,13 +25,7 @@ public class Cars {
         }
     }
 
-    @Override
-    public String toString() {
-        StringBuilder result = new StringBuilder();
-        for (Car car : cars) {
-            result.append(car.getName()).append("\n");
-        }
-        result.deleteCharAt(result.length() - 1);
-        return result.toString();
+    public Record getRecord() {
+        return new Record(cars);
     }
 }

@@ -60,4 +60,13 @@ class CarRacingTest {
         List<String> winners = winner.getWinners(carRacing.getResult());
         assertThat(winners.size()).isEqualTo(3);
     }
+
+    @Test
+    @DisplayName("주어진 횟수만큼 실행했는 지 확인")
+    public void checkTimes() {
+        InputValues inputValues = new InputValues("A", 10);
+        CarRacing carRacing = new CarRacing(inputValues);
+        carRacing.raceStart(new AlwaysMove());
+        assertThat(carRacing.getProcess().size()).isEqualTo(10);
+    }
 }

@@ -23,11 +23,14 @@ public class CarList {
     }
 
     private void validateName(String carName) throws IllegalArgumentException {
-        checkNullOrBlank(carName);
+        checkNullOrEmptyOrBlank(carName);
         checkSize(carName);
     }
 
-    private void checkNullOrBlank(String carName) throws IllegalArgumentException {
+    private void checkNullOrEmptyOrBlank(String carName) throws IllegalArgumentException {
+        if (carName == null) {
+            throw new IllegalArgumentException(ErrorMessage.NULL_OR_EMPTY_NAME.message());
+        }
         if (carName.isEmpty()) {
             throw new IllegalArgumentException(ErrorMessage.NULL_OR_EMPTY_NAME.message());
         }

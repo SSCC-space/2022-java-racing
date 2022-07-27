@@ -6,10 +6,12 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList;
 
-class CarListTest {
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
+class CarNameTest {
 
     @Test
     @DisplayName("자동차 이름 자수 제한 테스트")
@@ -19,7 +21,18 @@ class CarListTest {
         //when
 
         //then
-        assertThatThrownBy(()->carList.add("abcdef")).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> carList.add("abcdef")).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    @DisplayName("일급 컬렉션 테스트")
+    void should_ReturnList() {
+        //given
+        CarList carList = new CarList();
+        //when
+        carList.add("pobi");
+        //then
+        assertThat(carList.toList()).hasSameClassAs(new ArrayList<>());
     }
 
     @ParameterizedTest
@@ -37,6 +50,6 @@ class CarListTest {
         //when
 
         //then
-        assertThatThrownBy(()->carList.add(carName)).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> carList.add(carName)).isInstanceOf(IllegalArgumentException.class);
     }
 }

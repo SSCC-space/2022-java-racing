@@ -20,7 +20,7 @@ public class GameController {
         this.cars = new Cars(inputView.contenderNames(), inputView.roundNumber());
     }
 
-    public void play() throws IllegalArgumentException {
+    public void play() {
         printResult(cars);
     }
 

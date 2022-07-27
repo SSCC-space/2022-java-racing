@@ -1,9 +1,12 @@
+package calculator;
+
 import java.util.Arrays;
 import java.util.function.BiFunction;
 
 public enum Operator {
+
     ADD("+", (num1, num2) -> num1 + num2),
-    SUBTRACK("-", (num1, num2) -> num1 - num2),
+    SUBTRACT("-", (num1, num2) -> num1 - num2),
     MULTIPLY("*", (num1, num2) -> num1 * num2),
     DIVIDE("/", (num1, num2) -> {
         if (num2 == 0){

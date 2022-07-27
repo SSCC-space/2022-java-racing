@@ -11,15 +11,15 @@ public class Record {
         }
     }
 
-    public Set<String> getKeys(){
+    public Set<String> getKeys() {
         return positions.keySet();
     }
 
-    public int getValue(String key){
+    public int getValue(String key) {
         return positions.get(key);
     }
 
-    public Collection<Integer> getValues(){
+    public Collection<Integer> getValues() {
         return positions.values();
     }
 }

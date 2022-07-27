@@ -24,7 +24,7 @@ public class CarRacing {
         return recordResult;
     }
 
-    public Record getResult(){
-        return recordResult.get(count-1);
+    public Record getResult() {
+        return recordResult.get(count - 1);
     }
 }

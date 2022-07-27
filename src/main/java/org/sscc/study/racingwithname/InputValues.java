@@ -6,7 +6,7 @@ public class InputValues {
     private final int count;
     private final String names;
 
-    public InputValues(String names, int count){
+    public InputValues(String names, int count) {
         this.count = count;
         this.names = names;
     }

@@ -1,24 +1,17 @@
-import java.util.Random;
-
 public class RacingCar {
-    private int successCount;
-    private final Random random = new Random();
+    private int position;
+    private final MoveStrategy strategy;
 
-    public int getSuccessCount(){
-        return successCount;
+    public RacingCar(int position, MoveStrategy strategy) {
+        this.position = position;
+        this.strategy = strategy;
     }
 
-    public void tryMove(int tmpNumber){
-        if(canMove(tmpNumber)){
-            successCount++;
-        }
+    public int getPosition(){
+        return position;
     }
 
-    public int randomNumber(){
-        return random.nextInt(10);
-    }
-
-    private boolean canMove(int tmpNumber){
-        return (tmpNumber >= 4);
+    public void move() {
+         position++;
     }
 }

@@ -1,8 +1,13 @@
+import java.util.List;
+
 public class ResultView {
-    public void showCarPosition(int successCount){
-        for(int i=0; i<successCount; i++){
-            System.out.print("-");
-        }
-        System.out.println();
+    public void showCarPosition(List<Integer> carsPosition){
+
+        carsPosition.forEach((it) -> {
+            for (int i=0; i<it; i++) {
+                System.out.print("-");
+            }
+            System.out.println();
+        });
     }
 }

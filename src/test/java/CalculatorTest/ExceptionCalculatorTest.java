@@ -1,10 +1,13 @@
+package CalculatorTest;
+
+import Calculator.CalculatorUserInput;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class ExceptionCalculatorTest{
-    Calculator calculator = new Calculator();
+    CalculatorUserInput calculator = new CalculatorUserInput();
 
     @Test
     @DisplayName("입력 값이 null 또는 빈 공백 문자인지 테스트")

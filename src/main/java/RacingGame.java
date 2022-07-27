@@ -3,25 +3,20 @@ import java.util.List;
 
 public class RacingGame {
 
-    private final List<RacingCar> cars = new ArrayList<>();
-    private final ResultView resultView = new ResultView();
+    private final Cars cars;
 
-    void readyGame(int carCount){
-        for(int i=0; i<carCount; i++){
-            cars.add(new RacingCar());
-        }
+    public RacingGame(int carCount, MoveStrategy strategy) {
+        this.cars = new Cars(carCount, strategy);
     }
 
-    void startGame(int tryCount){
+    public void startGame(int tryCount){
         for(int i=0; i<tryCount; i++){
-            for(RacingCar car : cars){
-                int tmpNumber = car.randomNumber();
-                car.tryMove(tmpNumber);
-                resultView.showCarPosition(car.getSuccessCount());
-            }
-            System.out.println();
+            cars.move();
         }
     }
 
+    public List<Integer> getResult() {
+        return cars.getResult();
+    }
 
 }

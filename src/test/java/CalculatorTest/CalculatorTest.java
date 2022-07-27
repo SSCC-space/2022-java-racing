@@ -1,10 +1,13 @@
+package CalculatorTest;
+
+import Calculator.CalculatorUserInput;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CalculatorTest {
-    Calculator calculator = new Calculator();
+    CalculatorUserInput calculator = new CalculatorUserInput();
 
     @Test
     @DisplayName("더하기 테스트")
@@ -35,7 +38,7 @@ public class CalculatorTest {
     void seperatetest(){
         String str = "3 + 2";
         String[] result = {"3", "+", "2"};
-        assertThat(result).isEqualTo(calculator.seperate(str));
+        assertThat(result).isEqualTo(calculator.separate(str));
     }
 
     @Test

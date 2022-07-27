@@ -1,6 +1,8 @@
-public class Calculator {
+package Calculator;
+
+public class CalculatorUserInput {
         public int calculateUser(String input) {
-            String[] expression = seperate(input);
+            String[] expression = separate(input);
 
             int result = getInt(expression[0]);
             for(int i=0; i<expression.length-2; i+=2){
@@ -9,11 +11,11 @@ public class Calculator {
             return result;
         }
 
-        public int getInt(String str){
+        private int getInt(String str){
             return Integer.parseInt(str);
         }
 
-        public String[] seperate(String str){
+        public String[] separate(String str){
             return str.split(" ");
         }
 }

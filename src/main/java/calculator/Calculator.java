@@ -1,8 +1,10 @@
 package calculator;
 
 public class Calculator {
+
     public Calculator(String formula) {
     }
+
     public Calculator() {
         throw new IllegalArgumentException();
     }

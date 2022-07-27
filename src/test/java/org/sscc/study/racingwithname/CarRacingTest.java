@@ -8,6 +8,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class CarRacingTest {
 
@@ -68,5 +69,14 @@ class CarRacingTest {
         CarRacing carRacing = new CarRacing(inputValues);
         carRacing.raceStart(new AlwaysMove());
         assertThat(carRacing.getProcess().size()).isEqualTo(10);
+    }
+
+    @Test
+    @DisplayName("자동차 이름이 5글자를 넘어갔을 때 에러처리 확인")
+    public void nameTest(){
+        InputValues inputValues = new InputValues("123456", 10);
+        assertThatThrownBy(()->{
+            CarRacing carRacing = new CarRacing(inputValues);
+        }).isInstanceOf(IllegalArgumentException.class);
     }
 }

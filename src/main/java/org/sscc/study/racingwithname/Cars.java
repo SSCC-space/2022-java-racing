@@ -10,16 +10,8 @@ public class Cars {
     public Cars(StringTokenizer st) {
         cars = new ArrayList<>();
         while(st.hasMoreTokens()) {
-            String name = checkLength(st.nextToken());
-            cars.add(new Car(name));
+            cars.add(new Car(st.nextToken()));
         }
-    }
-
-    private String checkLength(String name){
-        if(name.length()>5){
-            throw new IllegalArgumentException("자동차 이름은 5자를 넘을 수 없습니다.");
-        }
-        return name;
     }
 
     public void run(MoveStrategy moveStrategy) {

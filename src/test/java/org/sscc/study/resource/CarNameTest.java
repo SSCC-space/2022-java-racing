@@ -32,7 +32,7 @@ class CarNameTest {
         //when
         carList.add("pobi");
         //then
-        assertThat(carList.toList()).hasSameClassAs(new ArrayList<>());
+        assertThat(carList.getList()).hasSameClassAs(new ArrayList<>());
     }
 
     @ParameterizedTest

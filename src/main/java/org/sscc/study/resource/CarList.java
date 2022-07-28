@@ -14,7 +14,7 @@ public class CarList {
         carList.add(new Car(carName));
     }
 
-    public List<Car> toList() {
+    public List<Car> getList() {
         return carList;
     }
 }

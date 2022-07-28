@@ -11,11 +11,9 @@ import java.util.Scanner;
 public class GameController {
     private final Cars cars;
     private final ResultView resultView;
-    private final RandomCondition randomCondition;
 
     public GameController(InputView inputView) {
         this.resultView = new ResultView();
-        this.randomCondition = new RandomCondition();
         this.cars = new Cars(inputView.contenderNames(), inputView.roundNumber());
     }
 
@@ -25,20 +23,12 @@ public class GameController {
 
     private void printResult(Cars cars) {
         for (int i = 0; i < cars.roundCount(); i++) {
-            printRoundResult(cars);
-        }
-
-        printWinner(cars);
-    }
-
-    private void printRoundResult(Cars cars) {
-        for (Car car : cars.roster()) {
-            car.move(randomCondition);
-            resultView.printCarName(car.name());
-            resultView.printCarPosition(car.currentPosition());
+            cars.move();
+            resultView.printRoundResult(cars);
             resultView.lineFeed();
         }
-        resultView.lineFeed();
+
+        resultView.printWinner(cars.winner());
     }
 
     private void printWinner(Cars cars) {

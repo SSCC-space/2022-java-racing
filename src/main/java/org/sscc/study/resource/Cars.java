@@ -7,6 +7,7 @@ public class Cars {
     private final CarList carList;
     private final Round rounds;
     private int maxPosition;
+    private static final RandomCondition randomCondition = new RandomCondition();
 
     public Cars(String input, int roundCount) {
         this.carList = new CarList();
@@ -20,8 +21,14 @@ public class Cars {
         }
     }
 
-    public List<Car> roster() {
-        return carList.toList();
+    public void move() {
+        for (Car car : carList.getList()) {
+            car.move(randomCondition);
+        }
+    }
+
+    public List<Car> carList() {
+        return carList.getList();
     }
 
     public int roundCount() {
@@ -31,7 +38,7 @@ public class Cars {
     public List<String> winner() {
         List<String> winner = new ArrayList<>();
         getMaxPosition();
-        for (Car car : carList.toList()) {
+        for (Car car : carList.getList()) {
             if (maxPosition == car.currentPosition()) {
                 winner.add(car.name());
             }
@@ -41,7 +48,7 @@ public class Cars {
 
     private void getMaxPosition() {
         int max = -1;
-        for (Car car : carList.toList()) {
+        for (Car car : carList.getList()) {
             if (car.currentPosition() > max) {
                 max = car.currentPosition();
             }

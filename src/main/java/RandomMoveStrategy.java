@@ -6,13 +6,10 @@ public class RandomMoveStrategy implements MoveStrategy{
 
     @Override
     public boolean isMoveAble() {
-        if(getRandomNumber() >= 4){
-            return true;
-        }
-        return false;
+        return getRandomNumber() >= Constant.FORWARD_MIN;
     }
 
     private int getRandomNumber() {
-        return random.nextInt(10);
+        return random.nextInt(Constant.FORWARD_MAX);
     }
 }

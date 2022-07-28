@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class Control {
     public static void main(String[] args) {
 
@@ -8,11 +6,11 @@ public class Control {
 
         ResultView resultView = new ResultView();
 
-        MoveStrategy strategy = new RandomMoveStrategy();
-        RacingGame racingGame = new RacingGame(inputView.getCarCount(),strategy);
+        RacingGame racingGame = new RacingGame(inputView.getNames());
         racingGame.startGame(inputView.getTryCount());
-        List<Integer> result = racingGame.getResult();
-        resultView.showCarPosition(result);
+        racingGame.endGame();
+        resultView.showRacingResult(inputView.getTryCount());
+        resultView.showWinner();
 
     }
 }

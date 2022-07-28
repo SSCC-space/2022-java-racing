@@ -1,22 +1,20 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class RacingGame {
 
-    private final Cars cars;
+    private final RacingCars cars;
 
-    public RacingGame(int carCount, MoveStrategy strategy) {
-        this.cars = new Cars(carCount, strategy);
+    public RacingGame(String inputNames) {
+        this.cars = new RacingCars(inputNames);
     }
 
     public void startGame(int tryCount){
         for(int i=0; i<tryCount; i++){
-            cars.move();
+            cars.moveCars();
         }
     }
 
-    public List<Integer> getResult() {
-        return cars.getResult();
+    public void endGame(){
+        Winner winner = new Winner(cars.getPositionInfo());
+        winner.findWinner();
     }
 
 }

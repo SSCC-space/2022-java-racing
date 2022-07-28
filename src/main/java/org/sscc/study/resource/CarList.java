@@ -1,12 +1,12 @@
 package org.sscc.study.resource;
 
-import org.sscc.study.util.Constants;
 import org.sscc.study.util.ErrorMessage;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CarList {
+    private final static int MAX_NAME_SIZE = 5;
     private final List<Car> carList;
 
     public CarList() {
@@ -40,7 +40,7 @@ public class CarList {
     }
 
     private void checkSize(String carName) throws IllegalArgumentException {
-        if (carName.length() > Constants.MAX_NAME_SIZE.value()) {
+        if (carName.length() > MAX_NAME_SIZE) {
             throw new IllegalArgumentException(ErrorMessage.TOO_LONG_NAME.message());
         }
     }

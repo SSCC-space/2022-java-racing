@@ -5,13 +5,15 @@ import org.sscc.study.util.SystemMessage;
 import java.util.List;
 
 public class ResultView {
+    private static final char POSITION_MARK = '-';
+
     public void printCarName(String carName) {
         System.out.print(carName + " : ");
     }
 
     public void printCarPosition(int currentPosition) {
         for (int i = 0; i < currentPosition; i++) {
-            System.out.print("-");
+            System.out.print(POSITION_MARK);
         }
     }
 

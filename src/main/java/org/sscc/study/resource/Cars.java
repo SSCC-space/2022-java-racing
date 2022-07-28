@@ -5,18 +5,16 @@ import java.util.List;
 
 public class Cars {
     private final CarList carList;
-    private final String input;
     private final Round rounds;
-    private int firstRank;
+    private int maxPosition;
 
     public Cars(String input, int roundCount) {
         this.carList = new CarList();
-        this.input = input;
         this.rounds = new Round(roundCount);
-        addCar();
+        addCar(input);
     }
 
-    private void addCar() {
+    private void addCar(String input) {
         for (String carName : input.split(",")) {
             carList.add(carName);
         }
@@ -32,22 +30,22 @@ public class Cars {
 
     public List<String> winner() {
         List<String> winner = new ArrayList<>();
-        getRank();
+        getMaxPosition();
         for (Car car : carList.toList()) {
-            if (firstRank == car.currentPosition()) {
+            if (maxPosition == car.currentPosition()) {
                 winner.add(car.name());
             }
         }
         return winner;
     }
 
-    private void getRank() {
-        int first = -1;
+    private void getMaxPosition() {
+        int max = -1;
         for (Car car : carList.toList()) {
-            if (car.currentPosition() > first) {
-                first = car.currentPosition();
+            if (car.currentPosition() > max) {
+                max = car.currentPosition();
             }
         }
-        firstRank = first;
+        maxPosition = max;
     }
 }

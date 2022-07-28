@@ -13,8 +13,7 @@ public class GameController {
     private final ResultView resultView;
     private final RandomCondition randomCondition;
 
-    public GameController() {
-        InputView inputView = new InputView(new Scanner(System.in));
+    public GameController(InputView inputView) {
         this.resultView = new ResultView();
         this.randomCondition = new RandomCondition();
         this.cars = new Cars(inputView.contenderNames(), inputView.roundNumber());

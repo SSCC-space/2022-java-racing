@@ -12,10 +12,8 @@ public class Car {
         this.name = name;
     }
 
-    public void move(RandomCondition randomCondition) {
-        if (randomCondition.isMovable()) {
-            position++;
-        }
+    public void move() {
+        position++;
     }
 
     public int currentPosition() {

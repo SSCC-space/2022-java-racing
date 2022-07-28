@@ -1,12 +1,8 @@
 package org.sscc.study.controller;
 
-import org.sscc.study.resource.Car;
 import org.sscc.study.resource.Cars;
-import org.sscc.study.resource.RandomCondition;
 import org.sscc.study.view.InputView;
 import org.sscc.study.view.ResultView;
-
-import java.util.Scanner;
 
 public class GameController {
     private final Cars cars;

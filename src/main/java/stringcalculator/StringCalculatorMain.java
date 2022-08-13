@@ -1,3 +1,8 @@
+package stringcalculator;
+
+import stringcalculator.StringCalculator;
+import stringcalculator.StringInput;
+
 public class StringCalculatorMain {
     public static void main(String[] args) {
         StringInput stringInput = new StringInput();

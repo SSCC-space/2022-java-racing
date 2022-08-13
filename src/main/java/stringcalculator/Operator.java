@@ -1,3 +1,5 @@
+package stringcalculator;
+
 import java.util.function.BiFunction;
 
 public enum Operator {

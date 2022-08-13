@@ -1,3 +1,6 @@
+package stringcalculator;
+
+import stringcalculator.Operator;
 
 public class StringCalculator {
     private final String[] splitContents;
